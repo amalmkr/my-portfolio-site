@@ -18,11 +18,52 @@
             scroll-behavior: smooth;
         }
         body{
-            background-color: black;
-            color:whitesmoke;
-            margin: 0;
-            padding: 0;
+                background: radial-gradient(circle at top, rgba(0, 255, 255, 0.15), transparent),
+                radial-gradient(circle at bottom, rgba(255, 0, 200, 0.15), transparent),
+                #000;        
+            }
+        body::before {
+            content: "";
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.imgur.com/9Q9QZJQ.png');
+            opacity: 0.12;
+            pointer-events: none;
         }
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: 
+                linear-gradient(rgba(0,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,0,200,0.05) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: -1;
+            }
+
+
+        .section-glow {
+            position: relative;
+        }
+
+        .section-glow::before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0,255,255,0.25), transparent 70%);
+            top: -100px;
+            left: -150px;
+            filter: blur(80px);
+            z-index: -1;
+        }
+        @keyframes cybergrow {
+            0% { box-shadow: 0 0 20px rgba(0,255,255,0.2); }
+            100% { box-shadow: 0 0 50px rgba(255,0,200,0.4); }
+}
+
         .navbar-custom {
             top: 0;
             width: 100%;
@@ -211,6 +252,18 @@
         .hey:hover{
             color: #00f5ff;
         }
+        .pulse {
+            animation: pulseGlow 2.5s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            from {
+                box-shadow: 0 0 10px #00f5ff, 0 0 20px #ff00c1;
+            }
+            to {
+                box-shadow: 0 0 25px #00f5ff, 0 0 45px #ff00c1;
+            }
+}
         #project{
                 height: 100vh;
                 display: flex;
@@ -226,15 +279,45 @@
         }
         .card {
             background-color: rgba(5, 5, 15, 0.85);
-            border: 1px solid #00f5ff;
+            border: 2px solid #00f5ff;
+            animation: borderPulse 3s infinite;
             color: white;
-            transition: all 0.3s ease;
+            transition: 0.3s ease;
+            border: 1px solid #00f5ff80;
+        }
+
+        @keyframes borderPulse {
+            0% { border-color: #00f5ff; }
+            50% { border-color: #ff00c1; }
+            100% { border-color: #00f5ff; }
         }
 
         .card:hover{
-            transform: translateY(-10px);
-            box-shadow: 0 0 25px #00f5ff;
+            box-shadow: 0 0 15px #00f5ff80, 0 0 30px #ff00c180;
+            transform: translateY(-5px);       
         }
+        .neon-title {
+            position: relative;
+            overflow: hidden;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+    .neon-title::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255,0,200,0.4), transparent);
+        animation: scan 2.5s infinite;
+    }
+
+    @keyframes scan {
+        0% { left: -100%; }
+        100% { left: 120%; }
+    }
 
         #certificate{
             height: 100vh;
@@ -311,34 +394,34 @@
 
             </div>  
         </nav>
-        <section id="home">
+        <section id="home" class="section-glow">
             <h2 class="cp-font" style="color: #00f5ff;">I BUILD SMART, SIMPLE AND EFFECTIVE SOLUTIONS.</h2>
             <h1 class="cp-font text position-relative" data-text="AMAL MRKN" style="font-size: 60px;">AMAL MRKN</h1>
             <p class="cp-font" style="color: violet;">FULL STACK & MOBILE APP DEVELOPER</p>
             <div class="justify-content-center mx-auto d-flex align-items-center gap-5">
-                <a class="btn-cv" href="AMAL M CV.pdf" download>
+                <a class="btn-cv pulse" href="AMAL M CV.pdf" download>
                     CURRICULUM VITAE
                 </a>
-                <a href="https://github.com/amalmkr" class="btn-cv">
+                <a href="https://github.com/amalmkr" class="btn-cv pulse">
                     <i class="bi bi-github p-3" style="font-family: 'orbitron',sans-serif;">&nbsp;GIT HUB</i> 
                 </a>
             </div>
         </section>
-        <section id="mrkn">
-           <p class="hey"> Hey, I'm</p> <h1 class="about-hero text" data-text="Amal Mrkn"> Amal Mrkn</h1>  <p style="font-size: 18px;">A passionate Full Stack & Mobile App Developer from Malappuram, Kerala.
+        <section id="mrkn" class="section-glow">
+           <p class="hey"> Hey, I'm</p> <h1 class="about-hero text" data-text="Amal Mrkn"> Amal Mrkn</h1>  <p style="font-size: 18px;color:white;">A passionate Full Stack & Mobile App Developer from Malappuram, Kerala.
             I build smart, simple and effective solutions using Python, Django, React, Flutter and more. I don't just learn technologies — I adapt to them fast and make them work for me.
             My dream is simple: make hard problems easy. Whether it's a web app, mobile app or something nobody has built yet — I find a way.
             I'm always learning, always building and always ready for the next challenge.</p>
         </section>
-        <section id="project">
-            <h1 style="color: #ff00c1;font-weight: bold;font-size: 40px;" class="mb-5 nav-link">My Projects</h1>
+        <section id="project" class="section-glow">
+            <h1 style="color: #ff00c1;font-weight: bold;font-size: 40px;" class="mb-5 neon-title">My Projects</h1>
             <div class="d-flex gap-5">
                 <div class="card" style="width: 18rem;">
                     <img src="images/sinet.png" class="card-img-top" alt="NO IMG">
                     <div class="card-body">
                         <h5 class="card-title mb-3" style="font-weight: 900;color: #ff00c1;">SINET SITE</h5>
                         <p class="card-text mb-4">A fully responsive website built for a real ISO-certified training institute in Malappuram.</p>
-                        <a href="https://amalmkr.github.io/sinet/" class="btn-cv">Take a look</a>
+                        <a href="https://amalmkr.github.io/sinet/" class="btn-cv pulse">Take a look</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
@@ -346,14 +429,14 @@
                     <div class="card-body">
                         <h5 class="card-title mb-3" style="font-weight: 900;color: #ff00c1;">Mac-Food site</h5>
                         <p class="card-text mb-5">A clean and responsive food showcase website with menu sections.</p>
-                        <a href="https://amalmkr.github.io/mac-food-site/" class="btn-cv">Take a look</a>
+                        <a href="https://amalmkr.github.io/mac-food-site/" class="btn-cv pulse">Take a look</a>
                     </div>
                 </div>
                 
             </div>
         </section>
-        <section id="certificate">
-         <h1 style="color: #ff00c1;font-weight: bold;font-size: 40px;" class="mb-5 nav-link">Certificates</h1>
+        <section id="certificate" class="section-glow">
+         <h1 style="color: #ff00c1;font-weight: bold;font-size: 40px;" class="mb-5 neon-title">Certificates</h1>
 <div class="d-flex gap-5 flex-wrap justify-content-center">
     
     <div class="card" style="width: 18rem;">
@@ -361,7 +444,7 @@
             <h5 class="card-title mb-3" style="font-weight: 900;color: #ff00c1;">Diploma In Software Engineering</h5>
             <p style="color: #00f5ff; font-size: 13px;">Sinet Education</p>
             <p class="card-text mb-4">A comprehensive diploma covering software development fundamentals, programming concepts and industry practices.</p>
-            <a href="#" class="btn-cv">Take a look</a>
+            <a href="#" class="btn-cv pulse">Take a look</a>
         </div>
     </div>
 
@@ -370,7 +453,7 @@
             <h5 class="card-title mb-3" style="font-weight: 900;color: #ff00c1;">C++ Bootcamp</h5>
             <p style="color: #00f5ff; font-size: 13px;">LetsUpgrade</p>
             <p class="card-text mb-4">Intensive bootcamp covering C++ core concepts, object-oriented programming, memory management and data structures.</p>
-            <a href="certificates/LUECPPFEB126327.pdf" class="btn-cv">Take a look</a>
+            <a href="certificates/LUECPPFEB126327.pdf" class="btn-cv pulse">Take a look</a>
         </div>
     </div>
 
@@ -379,7 +462,7 @@
             <h5 class="card-title mb-3" style="font-weight: 900;color: #ff00c1;">Git & Github</h5>
             <p style="color: #00f5ff; font-size: 13px;">LetsUpgrade</p>
             <p class="card-text mb-3">Mastered version control using Git and GitHub including branching, merging, pull requests, repositories and collaborative development workflows.</p>
-            <a href="certificates/LUEGGFEB126333.pdf" class="btn-cv">Take a look</a>
+            <a href="certificates/LUEGGFEB126333.pdf" class="btn-cv pulse">Take a look</a>
         </div>
     </div>
 
@@ -388,13 +471,13 @@
             <h5 class="card-title mb-3" style="font-weight: 900;color: #ff00c1;">HTML CSS Certificate</h5>
             <p style="color: #00f5ff; font-size: 13px;">LetsUpgrade</p>
             <p class="card-text mb-4 pb-4">Mastered web design fundamentals including semantic HTML, CSS styling, layouts and responsive design.</p>
-            <a href="certificates/LUEPCFEB1265.pdf" class="btn-cv">Take a look</a>
+            <a href="certificates/LUEPCFEB1265.pdf" class="btn-cv pulse">Take a look</a>
             </div>
         </div>
     </div>
     </section>
-        <section id="contact">
-        <h1 style="color:#ff00c1; font-weight:bold; font-size:40px;" class="nav-link">Contact Me</h1>
+        <section id="contact" class="section-glow">
+        <h1 style="color:#ff00c1; font-weight:bold; font-size:40px;" class="neon-title">Contact Me</h1>
     <div class="d-flex gap-5 align-items-center">
 
         <!-- LEFT: Form -->
@@ -402,17 +485,17 @@
             <input type="text" placeholder="Your Name" class="contact-input">
             <input type="email" placeholder="Your Email" class="contact-input">
             <textarea placeholder="Tell Me...!!!" class="contact-input" rows="5"></textarea>
-            <a href="mailto:amalmkr01@gmail.com" class="btn-cv text-center">Send Message</a>
+            <a href="mailto:amalmkr01@gmail.com" class="btn-cv pulse text-center">Send Message</a>
         </div>
 
         <!-- RIGHT: Links -->
         <div class="d-flex flex-column gap-4 text-start">
             <p><i class="bi bi-envelope" style="color:#00f5ff;"></i>&nbsp; amalmkr01@gmail.com</p>
             <p><i class="bi bi-phone" style="color:#00f5ff;"></i>&nbsp; 8281415283</p>
-            <a href="https://www.linkedin.com/in/amal-mkr-45b174364" class="btn-cv" target="www.linkedin.com/in/amal-mkr-45b174364">
+            <a href="https://www.linkedin.com/in/amal-mkr-45b174364" class="btn-cv pulse" target="www.linkedin.com/in/amal-mkr-45b174364">
                 <i class="bi bi-linkedin"></i>&nbsp; LinkedIn
             </a>
-            <a href="https://github.com/amalmkr" class="btn-cv" target="https://github.com/amalmkr">
+            <a href="https://github.com/amalmkr" class="btn-cv pulse" target="https://github.com/amalmkr">
                 <i class="bi bi-github"></i>&nbsp; GitHub
             </a>
         </div>
