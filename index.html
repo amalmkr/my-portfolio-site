@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
   <style>
     :root {
-      --bg: #0a0a0f;
-      --bg2: #0f0f18;
+      --bg: #1A1A1A;
+      --bg2: #4A0E1A;
       --surface: #13131e;
       --border: rgba(255,255,255,0.07);
       --accent: #c9a96e;
@@ -398,6 +398,22 @@
       background: #1a1a28;
     }
 
+    .project-img-placeholder {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, #1a1a28, #241830);
+    }
+
+    .project-img-placeholder i {
+      font-size: 2.6rem;
+      color: var(--accent);
+      opacity: 0.85;
+    }
+
     .project-body {
       padding: 1.8rem;
     }
@@ -723,7 +739,7 @@
         </div>
       </div>
       <div class="about-right">
-        <p>I'm a developer from Malappuram, Kerala with a foundation in C++, HTML, CSS and Bootstrap. I care about writing clean code and building things that actually work.</p>
+        <p>I'm a developer from Malappuram, Kerala with a growing foundation in full-stack development — Django and Python on the backend, and a complete front-end toolkit of HTML, CSS, JavaScript, jQuery and Bootstrap. I care about writing clean code and building things that actually work.</p>
         <p>I don't just learn technologies — I understand them. My goal is straightforward: complete my course, build real projects, and grow into a developer who solves meaningful problems.</p>
         <p>Every project I ship, however small, is a step toward that.</p>
       </div>
@@ -754,6 +770,19 @@
           <h3 class="project-title">Mac-Food</h3>
           <p class="project-desc">A clean and responsive food showcase website featuring categorised menu sections and a modern card-based layout.</p>
           <a href="https://amalmkr.github.io/mac-food-site/" target="_blank" class="project-link">
+            View Live <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-img-placeholder">
+          <i class="bi bi-droplet-half" aria-hidden="true"></i>
+        </div>
+        <div class="project-body">
+          <div class="project-number">03 — Full Stack</div>
+          <h3 class="project-title">Jalanidhi</h3>
+          <p class="project-desc">[Add a short description of what Jalanidhi does and the problem it solves.] Built with a Django backend and a complete front-end stack — HTML, CSS, JavaScript, jQuery and Bootstrap.</p>
+          <a href="#" target="_blank" class="project-link">
             View Live <i class="bi bi-arrow-right"></i>
           </a>
         </div>
