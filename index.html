@@ -469,6 +469,7 @@
       background: linear-gradient(135deg, rgba(201,169,110,0.05), transparent);
       opacity: 0;
       transition: opacity 0.4s;
+      pointer-events: none;
     }
 
     .project-card:hover {
@@ -580,6 +581,34 @@
     .project-link:hover {
       gap: 0.8rem;
       border-color: var(--accent);
+    }
+
+    .project-links-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .project-github {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      color: var(--muted);
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      flex-shrink: 0;
+    }
+
+    .project-github:hover {
+      border-color: rgba(201,169,110,0.35);
+      color: var(--accent);
+      transform: translateY(-2px);
     }
 
     /* ── CERTIFICATES ── */
@@ -908,9 +937,14 @@
             <span class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS"/>CSS</span>
             <span class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"/>Bootstrap</span>
           </div>
-          <a href="https://amalmkr.github.io/sinet/" target="_blank" class="project-link">
-            View Live <i class="bi bi-arrow-right"></i>
-          </a>
+          <div class="project-links-row">
+            <a href="https://amalmkr.github.io/sinet/" target="_blank" class="project-link">
+              View Live <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="https://github.com/amalmkr/sinet" target="_blank" class="project-github" aria-label="View source on GitHub">
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
         </div>
       </div>
       <div class="project-card reveal">
@@ -924,9 +958,14 @@
             <span class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS"/>CSS</span>
             <span class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"/>Bootstrap</span>
           </div>
-          <a href="https://amalmkr.github.io/mac-food-site/" target="_blank" class="project-link">
-            View Live <i class="bi bi-arrow-right"></i>
-          </a>
+          <div class="project-links-row">
+            <a href="https://amalmkr.github.io/mac-food-site/" target="_blank" class="project-link">
+              View Live <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="https://github.com/amalmkr/mac-food-site" target="_blank" class="project-github" aria-label="View source on GitHub">
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
         </div>
       </div>
       <div class="project-card reveal">
@@ -941,9 +980,34 @@
             <span class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS"/>CSS</span>
             <span class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"/>Bootstrap</span>
           </div>
-          <a href="https://amalmkr.github.io/Jalanidhi-website/" target="_blank" class="project-link">
-            View Live <i class="bi bi-arrow-right"></i>
-          </a>
+          <div class="project-links-row">
+            <a href="https://amalmkr.github.io/Jalanidhi-website/" target="_blank" class="project-link">
+              View Live <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="https://github.com/amalmkr/Jalanidhi-website" target="_blank" class="project-github" aria-label="View source on GitHub">
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <img src="img/coca-cola.png" alt="Coca-Cola website screenshot" class="project-img"/>
+        <div class="project-body">
+          <div class="project-number">04 — Front-End</div>
+          <h3 class="project-title">Coca-Cola</h3>
+          <p class="project-desc">A pixel-styled clone of the Coca-Cola brand site, built with React and styled using Tailwind CSS for a fast, responsive UI.</p>
+          <div class="project-tech">
+            <span class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React"/>React</span>
+            <span class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS"/>Tailwind CSS</span>
+          </div>
+          <div class="project-links-row">
+            <a href="https://coca-cola-clone-omega.vercel.app/" target="_blank" class="project-link">
+              View Live <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="https://github.com/amalmkr/coca-cola-clone" target="_blank" class="project-github" aria-label="View source on GitHub">
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
